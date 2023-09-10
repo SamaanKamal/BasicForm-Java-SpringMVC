@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Login Form</title>
+</head>
+<body>
+  <form action="processForm" th:object="${student}">
+      FirstName: <input th:field="*{firstName}">
+      <br><br>
+      LastName: <input th:field="*{lastName}">
+      <br><br>
+      <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

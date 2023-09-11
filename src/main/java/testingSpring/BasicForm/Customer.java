@@ -1,11 +1,16 @@
 package testingSpring.BasicForm;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
-public class Student {
+
+public class Customer {
     private String firstName;
+    @NotNull(message = "is required")
+    @Size(min = 1,message = "is required")
     private String lastName;
     private String country;
-    public Student(){}
+    public Customer(){}
 
     public String getFirstName() {
         return firstName;

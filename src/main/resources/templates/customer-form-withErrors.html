@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Login Form</title>
+  <style>
+    .error
+    {
+      color:red
+    }
+  </style>
+</head>
+<body>
+<i>Asterisk (*) means that field is required</i>
+<form action="#" th:action="@{/customer/processFormError}" th:object="${customer}">
+  FirstName: <input th:field="*{firstName}">
+  <br><br>
+  LastName (*): <input th:field="*{lastName}">
+  <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error"></span><br/>
+  <br><br>
+  <select th:field="*{country}">
+    <option value="Argentina" label="Argentina"></option>
+    <option value="Brazil" label="Brazil"></option>
+    <option value="Egypt" label="Egypt"></option>
+    <option value="England" label="England"></option>
+    <option value="France" label="France"></option>
+    <option value="Germany" label="Germany"></option>
+    <option value="Italy" label="Italy"></option>
+    <option value="Netherlands" label="Netherlands"></option>
+    <option value="Spain" label="Spain"></option>
+    <option value="Portugal" label="Portugal"></option>
+
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
